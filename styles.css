@@ -1,0 +1,71 @@
+@font-face {
+    font-family: bitstreamCharter;
+    src: url(./fonts/charterbt-roman.otf);
+}
+
+@font-face {
+    font-family: bitstreamCharterBold;
+    src: url(./fonts/charterbt-bold.otf);
+    font-weight: bold;
+}
+
+body * {
+    font-family: bitstreamCharter;
+}
+
+body {
+    overflow: hidden;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.calculator-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: silver;
+    padding: 10px;
+    border: 1px solid black;
+}
+
+.screen,
+.buttons-container {
+    width: 300px;
+}
+
+.screen {
+    height: 25px;
+    margin-bottom: 10px;
+    text-align: end;
+    background-color: white;
+    border: 1px solid black;
+}
+
+.buttons-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    row-gap: 2px;
+}
+
+.buttons-container button {
+    width: 48px;
+}
+
+.buttons-container .equals-button {
+    width: 97px;
+    background-color: royalblue;
+    color: white;
+}
+
+.buttons-container .clear-button {
+    background-color: red;
+    color: white;
+}
