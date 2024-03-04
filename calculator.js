@@ -1,6 +1,3 @@
-let x, y;
-let operator;
-
 function add(x, y) {
     return x + y;
 };
@@ -36,3 +33,18 @@ function operate(x, operator, y) {
             break;
     };
 };
+
+const calculatorScreen = document.querySelector(".screen");
+const numberButtons = document.querySelectorAll(".number");
+
+numberButtons.forEach(button => {
+    button.addEventListener("click", () => {
+        calculatorScreen.textContent += button.textContent;
+    });
+});
+
+const clearButton = document.querySelector("#clear-button");
+
+clearButton.addEventListener("click", () => {
+    calculatorScreen.textContent = "";
+});

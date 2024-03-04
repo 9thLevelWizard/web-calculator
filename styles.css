@@ -59,13 +59,13 @@ body {
     width: 48px;
 }
 
-.buttons-container .equals-button {
+.buttons-container #equals-button {
     width: 97px;
     background-color: royalblue;
     color: white;
 }
 
-.buttons-container .clear-button {
+.buttons-container #clear-button {
     background-color: red;
     color: white;
 }
