@@ -39,12 +39,12 @@ const numberButtons = document.querySelectorAll(".number");
 
 numberButtons.forEach(button => {
     button.addEventListener("click", () => {
-        calculatorScreen.textContent += button.textContent;
+        calculatorScreen.value += button.textContent;
     });
 });
 
 const clearButton = document.querySelector("#clear-button");
 
 clearButton.addEventListener("click", () => {
-    calculatorScreen.textContent = "";
+    calculatorScreen.value = "";
 });
