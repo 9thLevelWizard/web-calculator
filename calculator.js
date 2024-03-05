@@ -35,6 +35,7 @@ function operate(x, operator, y) {
 };
 
 const calculatorScreen = document.querySelector(".screen");
+
 const numberButtons = document.querySelectorAll(".number, .operator, .symbol");
 
 numberButtons.forEach(button => {
@@ -47,6 +48,13 @@ const clearButton = document.querySelector("#clear-button");
 
 clearButton.addEventListener("click", () => {
     calculatorScreen.value = "";
+});
+
+const undoButton = document.querySelector("#undo-button");
+
+undoButton.addEventListener("click", () => {
+    let screenValue = calculatorScreen.value;
+    calculatorScreen.value = screenValue.replace(screenValue.charAt(screenValue.length - 1), ""); // delete last character
 });
 
 // const re = /([+\-*\/])/; to capture every operator symbol
