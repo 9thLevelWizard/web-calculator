@@ -1,38 +1,4 @@
-function add(x, y) {
-    return x + y;
-};
-
-function subtract(x, y) {
-    return x - y;
-};
-
-function multiply(x, y) {
-    return x * y;
-};
-
-function divide(x, y) {
-    return x / y;
-};
-
-function operate(x, operator, y) {
-    switch (operator) {
-        case "+":
-            add(x, y);
-            break;
-        case "-":
-            subtract(x, y);
-            break;
-        case "*":
-            multiply(x, y);
-            break;
-        case "/":
-            divide(x, y);
-            break;
-        default:
-            console.log("Invalid operator.");
-            break;
-    };
-};
+// import here
 
 const calculatorScreen = document.querySelector(".screen");
 
@@ -57,4 +23,19 @@ undoButton.addEventListener("click", () => {
     calculatorScreen.value = screenValue.replace(screenValue.charAt(screenValue.length - 1), ""); // delete last character
 });
 
-// const re = /([+\-*\/])/; to capture every operator symbol
+const equalsButton = document.querySelector("#equals-button");
+
+equalsButton.addEventListener("click", () => {
+    const letters = /\p{L}/gu;
+
+    if (letters.test(calculatorScreen.value)) {
+        calculatorScreen.value = "Malformed expression.";
+    }
+    else {
+        try {
+            calculatorScreen.value = // math.js evaluate() here
+        } catch (error) {
+            calculatorScreen.value = "Error: " + error.message;
+        };
+    };
+});
